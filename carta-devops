@@ -16,6 +16,10 @@ function serve {
     python app/
 }
 
+function my_serve {
+    python app/my_app.py
+}
+
 if [[ $# -eq 0 ]] ; then
     help_menu
     exit 0
@@ -25,6 +29,7 @@ case "$1" in
     help) help_menu & ;;
     test) unit_tests & ;;
     serve) serve & ;;
+    my_serve) my_serve & ;;
     tasks) tasks_display & ;;
     x) cat /var/secret.txt & ;;
     *) help_menu &;;
